@@ -22,11 +22,11 @@ func (pr partHeap) Swap(i, j int) {
 	pr.ph[i], pr.ph[j] = pr.ph[j], pr.ph[i]
 }
 
-func (pr *partHeap) Push(x interface{}) {
+func (pr *partHeap) Push(x any) {
 	(*pr).ph = append((*pr).ph, x.(*partRec))
 }
 
-func (pr *partHeap) Pop() interface{} {
+func (pr *partHeap) Pop() any {
 	old := (*pr).ph
 	n := len(old)
 	item := old[n-1]
